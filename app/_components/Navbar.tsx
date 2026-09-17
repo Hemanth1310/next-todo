@@ -15,10 +15,12 @@ const Navbar = async() => {
     {!user? <ul className="menu menu-horizontal px-1">
         <li><Link href='/login'>Login</Link></li>
         <li><Link href='/register'>Register</Link></li>
-    </ul>:<ul className="menu menu-horizontal px-1">
-        <li>
-           <LogoutButton/>
+    </ul>:<ul className="menu menu-horizontal items-center space-x-3 px-1">
+        <li><Link href='/todo/create'>Create Todo</Link></li>
+        <li>   
+         <LogoutButton/>
         </li>
+
     </ul>}
         
   </div>

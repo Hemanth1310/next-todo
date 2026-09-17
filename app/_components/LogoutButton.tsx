@@ -11,7 +11,7 @@ const LogoutButton = () => {
     }
 
   return (
-    <li onClick={handleLogout} className='p'>Logout</li>
+    <span onClick={handleLogout} className='cursor-pointer hover:text-red-800'>Logout</span>
   )
 }
 

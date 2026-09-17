@@ -7,10 +7,10 @@ import { useRouter } from 'next/navigation'
 
 type initialStateType={
     error: string|null,
-    success?:boolean
+    success:boolean
 }
 
-const initialState = {
+const initialState:initialStateType = {
     error:"",
     success: false
 }
@@ -30,7 +30,7 @@ const LoginForm = () => {
                     progress: undefined,
                     theme: "light",
             })
-            router.push('/')
+            router.push('/dashboard')
         }
     },[router,state])
   return (
