@@ -4,11 +4,8 @@ import { useActionState, useEffect } from "react"
 import { registerAction } from "../actions/authActions"
 import { toast } from "react-toastify"
 import { useRouter } from "next/navigation"
+import { initialStateType } from "../types"
 
-type initialStateType={
-    error: string|null,
-    success:boolean
-}
 
 const initialState:initialStateType = {
     error:"",

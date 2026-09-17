@@ -4,11 +4,8 @@ import prisma from "../_lib/prisma"
 import { deleteSession, setSession } from "../_lib/session"
 import { error } from "console"
 import { Prisma } from "../generated/prisma/client"
+import { initialStateType } from "../types"
 
-type initialStateType={
-    error: string|null,
-    success:boolean
-}
 
 export async function loginAction(prevState:initialStateType,formData:FormData):Promise<initialStateType>{
     const email = formData.get('email') as string

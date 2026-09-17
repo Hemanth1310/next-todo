@@ -3,3 +3,8 @@ export type UserFormatted = {
     id: number;
     email: string;
 }
+
+export type initialStateType={
+    error: string|null,
+    success:boolean
+}
