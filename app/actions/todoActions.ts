@@ -89,3 +89,28 @@ export const editTodoAction = async(prevState:initialStateType, formData:FormDat
             }
     }
 }
+
+export const toggleStatusAction = async(id:number, status:boolean)=>{
+   
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+     try{
+        await prisma.todo.update({
+            where:{id},
+            data:{
+                status
+            }
+        })
+
+                return {
+                    error:"",
+                    success:true
+                }
+    }catch{
+        return{
+            error:"Failed to update",
+            success:false
+        }
+    }
+    
+}
