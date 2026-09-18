@@ -64,6 +64,7 @@ export const editTodoAction = async(prevState:initialStateType, formData:FormDat
     const description = formData.get('description') as string
     const id = formData.get('id') as string
     try{
+        await new Promise((resolve)=>setTimeout(resolve,2000))
         const todo = await prisma.todo.update({
             where:{id:Number(id)},
             data:{

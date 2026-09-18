@@ -32,7 +32,7 @@ const CreateTodoForm = () => {
         <label className="label">Task</label>
         <input name='task' type="text" className="input w-full bg-mist-50" placeholder="Task" />
         <label className="label">Description</label>
-        <textarea name='description' className="input min-h-52 w-full p-3 bg-mist-50" placeholder="Description" />
+        <textarea name='description' className="input min-h-52 w-full p-3 bg-mist-50 flex flex-wrap" placeholder="Description" />
         <button disabled={isPending} className="mt-5 btn btn-soft bg-foreground hover:bg-foreground-light">
            {isPending?"...Creating":"Create Todo"}
         </button>
