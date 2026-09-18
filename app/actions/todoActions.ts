@@ -58,3 +58,34 @@ export async function createTodo(prev:initialStateType, formData:FormData):Promi
     }
 }
 
+
+export const editTodoAction = async(prevState:initialStateType, formData:FormData)=>{
+    const task = formData.get('task') as string
+    const description = formData.get('description') as string
+    const id = formData.get('id') as string
+    try{
+        const todo = await prisma.todo.update({
+            where:{id:Number(id)},
+            data:{
+                task,
+                description
+            }
+        })
+
+        if(!todo){
+             return {
+                error:"Error in updating todo",
+                success:false,
+         }
+        }
+        return {
+                error:"",
+                success:true,
+            }
+    }catch{
+        return{
+                error:"Unexpected Error Occured",
+                success:false,
+            }
+    }
+}

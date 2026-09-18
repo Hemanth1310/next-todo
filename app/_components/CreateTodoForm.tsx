@@ -30,9 +30,9 @@ const CreateTodoForm = () => {
   return (
     <form action={formAction} className="card-body">
         <label className="label">Task</label>
-        <input name='task' type="text" className="input w-full bg-mist-50" placeholder="Email" />
+        <input name='task' type="text" className="input w-full bg-mist-50" placeholder="Task" />
         <label className="label">Description</label>
-        <textarea name='description' className="input min-h-52 w-full p-3 bg-mist-50" placeholder="Password" />
+        <textarea name='description' className="input min-h-52 w-full p-3 bg-mist-50" placeholder="Description" />
         <button disabled={isPending} className="mt-5 btn btn-soft bg-foreground hover:bg-foreground-light">
            {isPending?"...Creating":"Create Todo"}
         </button>
