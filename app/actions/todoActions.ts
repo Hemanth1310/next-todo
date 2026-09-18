@@ -91,8 +91,6 @@ export const editTodoAction = async(prevState:initialStateType, formData:FormDat
 }
 
 export const toggleStatusAction = async(id:number, status:boolean)=>{
-   
-    await new Promise((resolve) => setTimeout(resolve, 2000))
 
      try{
         await prisma.todo.update({
@@ -113,4 +111,23 @@ export const toggleStatusAction = async(id:number, status:boolean)=>{
         }
     }
     
+}
+
+
+export const deleteTodoAction = async(id:number)=>{
+    try{
+        await prisma.todo.delete({
+            where:{id}
+        })
+
+        return{
+            error:"",
+            success:true
+        }
+    }catch{
+        return{
+            error:"Cant delete todo right now.",
+            success:false
+        }
+    }
 }

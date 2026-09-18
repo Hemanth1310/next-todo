@@ -3,6 +3,7 @@ import { getSession } from '../_lib/session'
 import Link from 'next/link'
 import prisma from '../_lib/prisma'
 import StatusCheckBox from '../_components/StatusCheckBox'
+import DeleteTodoButton from '../_components/DeleteTodoButton'
 
 const Dashboard = async() => {
     const user =await getSession()
@@ -31,6 +32,7 @@ const Dashboard = async() => {
                     <th className='text-foreground'>Task</th>
                     <th className='text-foreground'>Description</th>
                     <th className='text-foreground'>Edit</th>
+                     <th className='text-foreground'>Delete</th>
                     <th className='text-foreground'>Status</th>
                 </tr>
                 </thead>
@@ -42,6 +44,7 @@ const Dashboard = async() => {
                             <td>{todo.task}</td>
                                 <td>{todo.description}</td>
                                 <td><Link href={`/todo/edit/${todo.id}`} className="btn btn-xs btn-outline btn-primary">Edit</Link></td>
+                                <td><DeleteTodoButton id={todo.id}/></td>
                                 <td>{todo.status? <div className="badge badge-outline badge-success">Success</div>:<div className="badge badge-outline badge-warning">Pending</div>}</td>
                         </tr>
                     ))}
